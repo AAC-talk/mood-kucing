@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <title>Mood Kamu Hari Ini (Kucing Style)</title>
+  <style>
+    body {
+      font-family: sans-serif;
+      text-align: center;
+      background-color: #fffaf0;
+      padding: 50px;
+    }
+
+    h1 {
+      color: #ff69b4;
+    }
+
+    img {
+      width: 300px;
+      border-radius: 20px;
+      margin: 20px auto;
+    }
+
+    button {
+      padding: 12px 24px;
+      font-size: 16px;
+      background-color: #ff69b4;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+    }
+
+    #mood {
+      font-size: 1.2em;
+      color: #444;
+      margin-top: 20px;
+    }
+  </style>
+</head>
+<body>
+  <h1>🐱 Mood Kamu Hari Ini</h1>
+  <img id="catImg" src="https://cataas.com/cat?time=1" alt="Kucing Lucu">
+  <div id="mood">Klik tombol di bawah buat tahu mood kamu hari ini!</div>
+  <br><br>
+  <button onclick="generateMood()">Lihat Mood Aku 😼</button>
+
+  <script>
+    const moods = [
+      "Hari ini kamu seperti kucing tidur, cuek tapi imut.",
+      "Mood kamu: kucing lapar yang kesel nungguin makan.",
+      "Kamu hari ini kayak kucing naik motor... bingung arah tapi gaya.",
+      "Seperti kucing nonton sinetron, kamu drama tapi gemes.",
+      "Mood kamu: kayak kucing ngeliatin cicak — fokus, tapi nggak ngapa-ngapain.",
+      "Hari ini kamu kayak kucing yang dijauhin gebetan... sedih tapi gengsi.",
+      "Kamu seperti kucing yang disuruh mandi... males maksimal.",
+      "Mood kamu: diem tapi waspada. Kayak kucing di pojokan kamar.",
+    ];
+
+    function generateMood() {
+      const mood = moods[Math.floor(Math.random() * moods.length)];
+      document.getElementById("mood").innerText = mood;
+      document.getElementById("catImg").src = "https://cataas.com/cat?time=" + new Date().getTime();
+    }
+  </script>
+</body>
+</html>
